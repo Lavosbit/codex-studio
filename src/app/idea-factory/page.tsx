@@ -31,7 +31,11 @@ export default function IdeaFactoryCaseStudy() {
             >
               <Link href="/">Back to overview</Link>
             </Button>
-            <Button asChild size="sm" className="rounded-full">
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-neutral-100 text-neutral-900 hover:bg-neutral-200 border border-neutral-300 ..."
+            >
               <Link href="/upload">Start a conversion</Link>
             </Button>
           </nav>

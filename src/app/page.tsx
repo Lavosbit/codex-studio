@@ -1,53 +1,129 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
+      {/* Demo banner */}
+      <div className="w-full border-b border-neutral-800 bg-neutral-900/90 px-4 py-2 text-center text-[11px] text-neutral-300 md:px-6">
+        Demo Mode: This version simulates job submissions for Idea Factory.
+      </div>
       {/* Header */}
-      <header className="border-b border-neutral-800/60 bg-neutral-950/80 backdrop-blur">
-        <div className="w-full bg-neutral-900 text-center py-2 text-[11px] text-neutral-400 border-b border-neutral-800">
-          Demo Mode: This version simulates job submissions for Idea Factory.
-        </div>
+      {/* HEADER */}
+      <header className="sticky top-0 z-40 border-b border-neutral-800 bg-neutral-950/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-          <Link href="/" className="flex items-center gap-2">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-2"
+            onClick={() => setMobileOpen(false)}
+          >
             <div className="h-7 w-7 rounded-xl bg-gradient-to-tr from-sky-400 via-cyan-300 to-emerald-300" />
-            <span className="text-sm font-semibold tracking-tight text-neutral-100 md:text-base">
+            <span className="text-sm font-semibold tracking-tight md:text-base">
               Codex<span className="text-sky-300">3D</span>
             </span>
           </Link>
 
-          <nav className="flex items-center gap-4">
-            <Link
-              href="/idea-factory"
-              className="hidden text-xs text-neutral-300 hover:text-neutral-50 md:inline"
-            >
-              Case study
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-6 text-xs text-neutral-300 md:flex">
+            <Link href="#how-it-works" className="hover:text-neutral-50">
+              How it works
             </Link>
-            <Link
-              href="/white-paper"
-              className="hidden text-xs text-neutral-300 hover:text-neutral-50 md:inline"
-            >
+            <Link href="#modes" className="hover:text-neutral-50">
+              Modes
+            </Link>
+            <Link href="/idea-factory" className="hover:text-neutral-50">
+              Idea Factory case study
+            </Link>
+            <Link href="/white-paper" className="hover:text-neutral-50">
               White paper (draft)
             </Link>
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-neutral-100 text-neutral-900 hover:bg-neutral-200 border border-neutral-300 ..."
+            >
+              <Link href="/upload">Start a conversion</Link>
+            </Button>
+          </nav>
+
+          {/* MOBILE: CTA + hamburger */}
+          <div className="flex items-center gap-2 md:hidden">
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-neutral-200 text-neutral-900 text-[11px] px-3 py-1.5 hover:bg-neutral-300"
+            >
+              {/* <Link href="/upload" onClick={() => setMobileOpen(false)}>
+                Start
+              </Link> */}
+            </Button>
+
+            {/* three-line hamburger icon */}
+            <button
+              type="button"
+              aria-label="Toggle navigation"
+              onClick={() => setMobileOpen((open) => !open)}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900 text-neutral-200"
+            >
+              <div className="space-y-[3px]">
+                <span className="block h-[2px] w-4 rounded bg-current" />
+                <span className="block h-[2px] w-4 rounded bg-current" />
+                <span className="block h-[2px] w-4 rounded bg-current" />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* MOBILE MENU PANEL */}
+        <div
+          className={`border-t border-neutral-800 bg-neutral-950 md:hidden transition-all duration-150 ${
+            mobileOpen
+              ? "max-h-64 opacity-100"
+              : "max-h-0 opacity-0 pointer-events-none"
+          }`}
+        >
+          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm text-neutral-200">
             <Link
               href="#how-it-works"
-              className="hidden text-xs text-neutral-300 hover:text-neutral-50 md:inline"
+              className="py-1.5"
+              onClick={() => setMobileOpen(false)}
             >
               How it works
             </Link>
             <Link
               href="#modes"
-              className="hidden text-xs text-neutral-300 hover:text-neutral-50 md:inline"
+              className="py-1.5"
+              onClick={() => setMobileOpen(false)}
             >
               Modes
             </Link>
-            <Button asChild size="sm" className="rounded-full">
-              <Link href="/upload">Start a conversion</Link>
-            </Button>
+            <Link
+              href="/idea-factory"
+              className="py-1.5"
+              onClick={() => setMobileOpen(false)}
+            >
+              Idea Factory case study
+            </Link>
+            <Link
+              href="/white-paper"
+              className="py-1.5"
+              onClick={() => setMobileOpen(false)}
+            >
+              White paper (draft)
+            </Link>
+            <Link
+              href="/upload"
+              className="py-1.5 text-sky-400"
+              onClick={() => setMobileOpen(false)}
+            >
+              Start a conversion →
+            </Link>
           </nav>
         </div>
       </header>
