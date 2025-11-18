@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import BackToTop from "@/components/ui/back-to-top";
 
 export default function HomePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -368,6 +369,7 @@ export default function HomePage() {
             </p>
           </div>
         </section>
+        <BackToTop />
       </main>
       <footer className="border-t border-neutral-800 py-4 text-center text-[11px] text-neutral-500">
         Built as a Minimum Viable Experiment during Startup Virginia’s Idea

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import BackToTop from "@/components/ui/back-to-top";
 
 export default function IdeaFactoryCaseStudy() {
   return (
@@ -389,6 +390,7 @@ export default function IdeaFactoryCaseStudy() {
             concrete step in that direction.
           </p>
         </section>
+        <BackToTop />
       </main>
 
       <footer className="border-t border-neutral-900 py-4 text-center text-[11px] text-neutral-500">

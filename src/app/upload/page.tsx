@@ -4,6 +4,7 @@ import { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import BackToTop from "@/components/ui/back-to-top";
 
 const MODES = [
   { id: "ai", label: "AI Fast Mode" },
@@ -257,6 +258,7 @@ export default function UploadPage() {
             </div>
           </div>
         </form>
+        <BackToTop />
       </main>
 
       <footer className="border-t border-neutral-900 py-4 text-center text-[11px] text-neutral-500">
