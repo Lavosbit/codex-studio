@@ -67,7 +67,7 @@ export async function POST(req: Request) {
     const result = await resend.emails.send({
       from: `${name || "Codex3D User"} <${CONTACT_FROM_EMAIL}>`,
       to: CONTACT_TO_EMAIL,
-      reply_to: email,
+      replyTo: email,
       subject: subject || `New message from ${name || "Codex3D User"}`,
       html,
     });
