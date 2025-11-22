@@ -7,9 +7,9 @@ import type { NextRequest } from "next/server";
 
 export async function GET(
   _req: NextRequest,
-  context: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = context.params;
+  const { slug } = await context.params;
 
   // Turn "idea-factory" → "Idea Factory"
   const title = slug
