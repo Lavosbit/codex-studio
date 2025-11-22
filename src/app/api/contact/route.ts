@@ -69,12 +69,12 @@ export async function POST(req: Request) {
 
     // Send email
     const result = await resend.emails.send({
-      from: `${name} <${CONTACT_FROM_EMAIL}>`,
+      from: `${name || "Codex3D User"} <${CONTACT_FROM_EMAIL}>`,
       to: CONTACT_TO_EMAIL,
-      reply_to: email,
-      subject,
+      replyTo: email || undefined,
+      subject: subject || `New message from ${name || "Codex3D User"}`,
       html,
-      attachments, // ⬅️ FULL ATTACHMENT SUPPORT
+      attachments,
     });
 
     console.log("📬 Resend result:", result);
