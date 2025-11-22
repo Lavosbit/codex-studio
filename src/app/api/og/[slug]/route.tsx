@@ -3,14 +3,13 @@ import { siteConfig } from "@/config/site";
 
 export const runtime = "edge";
 
-type RouteParams = {
-  params: {
-    slug: string;
-  };
-};
+import type { NextRequest } from "next/server";
 
-export async function GET(_req: Request, { params }: RouteParams) {
-  const slug = params.slug ?? "";
+export async function GET(
+  _req: NextRequest,
+  context: { params: { slug: string } }
+) {
+  const { slug } = context.params;
 
   // Turn "idea-factory" → "Idea Factory"
   const title = slug
