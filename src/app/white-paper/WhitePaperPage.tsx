@@ -7,13 +7,15 @@ import BackToTop from "@/components/ui/back-to-top";
 import BackToOverviewButton from "@/components/ui/BackToOverviewButton";
 import SiteHeader from "@/components/layout/SiteHeader";
 import Footer from "@/components/layout/Footer";
-import TopBanner from "@/components/layout/TopBanner";
 
 export default function WhitePaperPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50">
       {/* Demo banner */}
-      <TopBanner message="Draft in progress: This white paper is a working version for ResearchGate." />
+      <div className="w-full border-b border-neutral-800 bg-neutral-900/90 px-4 py-2 text-center text-[11px] text-neutral-300 md:px-6">
+        Draft in progress: This white paper is a working version for
+        ResearchGate.
+      </div>
 
       {/* Header */}
       <SiteHeader />
@@ -28,14 +30,17 @@ export default function WhitePaperPage() {
           className="space-y-3"
         >
           <BackToOverviewButton />
+
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-sky-300">
             White Paper · Draft for ResearchGate
           </p>
+
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">
             From Photos to Presence: Exploring Accessible 3D Capture,
             Photogrammetry, and Web-Based AR for Cultural Heritage, Education,
             and Training
           </h1>
+
           <p className="text-xs text-neutral-400">
             Author: Jacob Galito · Status: Work in progress / pre-publication
             draft
@@ -47,6 +52,7 @@ export default function WhitePaperPage() {
           <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-400">
             Abstract (Draft)
           </h2>
+
           <p className="text-sm text-neutral-300">
             This draft white paper explores how accessible 3D capture
             workflows—including photogrammetry, LiDAR, Gaussian splats, and
@@ -58,6 +64,7 @@ export default function WhitePaperPage() {
             </span>
             .
           </p>
+
           <p className="text-sm text-neutral-300">
             The goal of this document is not to present a finished empirical
             study, but to share a working synthesis of practice-based insights
@@ -100,16 +107,17 @@ export default function WhitePaperPage() {
           </ul>
           <p className="text-sm text-neutral-300">
             This paper frames these challenges through the lens of an
-            "object-first" approach: starting with the real-world artifacts,
-            devices, or products that matter to people, and designing workflows
-            that make it easy to capture, preserve, and present them over time.
+            &quot;object-first&quot; approach: starting with the real-world
+            artifacts, devices, or products that matter to people, and designing
+            workflows that make it easy to capture, preserve, and present them
+            over time.
           </p>
         </section>
 
-        {/* Background & practice context */}
+        {/* Background & practice-based context */}
         <section className="space-y-3 border-t border-neutral-900 pt-8">
           <h2 className="text-lg font-semibold text-neutral-50">
-            Background & practice-based context
+            Background &amp; practice-based context
           </h2>
           <p className="text-sm text-neutral-300">
             The perspective of this draft is practice-based. It synthesizes work
@@ -161,8 +169,8 @@ export default function WhitePaperPage() {
           </p>
           <ul className="ml-5 list-disc space-y-1 text-sm text-neutral-300">
             <li>
-              3D initiatives framed as one-off "projects" instead of ongoing,
-              maintainable practices.
+              3D initiatives framed as one-off &quot;projects&quot; instead of
+              ongoing, maintainable practices.
             </li>
             <li>
               Confusion over which capture method (photogrammetry, LiDAR,
@@ -186,7 +194,7 @@ export default function WhitePaperPage() {
         {/* Approach & early direction */}
         <section className="space-y-3 border-t border-neutral-900 pt-8">
           <h2 className="text-lg font-semibold text-neutral-50">
-            Approach & early direction
+            Approach &amp; early direction
           </h2>
           <p className="text-sm text-neutral-300">
             The pilot implementation of these ideas is Codex3D—the minimum
@@ -215,10 +223,10 @@ export default function WhitePaperPage() {
           </p>
         </section>
 
-        {/* Planned sections / TODOs */}
+        {/* Planned additions & open questions */}
         <section className="space-y-3 border-t border-neutral-900 pt-8">
           <h2 className="text-lg font-semibold text-neutral-50">
-            Planned additions & open questions
+            Planned additions &amp; open questions
           </h2>
           <p className="text-sm text-neutral-300">
             As a work in progress, this draft intentionally leaves space for:
@@ -247,7 +255,7 @@ export default function WhitePaperPage() {
           </p>
         </section>
 
-        {/* Call to action */}
+        {/* How this will map to ResearchGate */}
         <section className="space-y-3 border-t border-neutral-900 pt-8 pb-10">
           <h2 className="text-lg font-semibold text-neutral-50">
             How this will map to ResearchGate
@@ -259,7 +267,7 @@ export default function WhitePaperPage() {
           <ul className="ml-5 list-disc space-y-1 text-sm text-neutral-300">
             <li>Formal abstract, keywords, and introduction.</li>
             <li>Background / related work section.</li>
-            <li>Methods & practice description (case-based).</li>
+            <li>Methods &amp; practice description (case-based).</li>
             <li>Findings, implications, and future work.</li>
           </ul>
           <p className="text-sm text-neutral-300">
