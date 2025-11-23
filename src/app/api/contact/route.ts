@@ -69,7 +69,7 @@ export async function POST(req: Request) {
 
     // Send email
     const result = await resend.emails.send({
-      from: `${name || "Codex3D User"} <${CONTACT_FROM_EMAIL}>`,
+      from: `Codex Studio <${CONTACT_FROM_EMAIL}>`,
       to: CONTACT_TO_EMAIL,
       replyTo: email || undefined,
       subject: subject || `New message from ${name || "Codex3D User"}`,
