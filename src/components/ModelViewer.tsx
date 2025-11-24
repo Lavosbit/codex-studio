@@ -2,10 +2,7 @@
 
 import React, { useEffect, forwardRef } from "react";
 
-type ModelViewerProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLElement>,
-  HTMLElement
-> & {
+type ModelViewerProps = React.HTMLAttributes<HTMLElement> & {
   src?: string;
   alt?: string;
   ar?: boolean | string;
@@ -25,11 +22,8 @@ const ModelViewer = forwardRef<HTMLElement, ModelViewerProps>(
       import("@google/model-viewer");
     }, []);
 
-    return (
-      <model-viewer ref={ref as any} {...rest}>
-        {children}
-      </model-viewer>
-    );
+    // Use React.createElement so TS doesn't care about JSX.IntrinsicElements
+    return React.createElement("model-viewer", { ref, ...rest }, children);
   }
 );
 
