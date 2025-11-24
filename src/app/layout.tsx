@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/config/site";
-import PageContainer from "@/components/layout/PageContainer";
+// import PageContainer from "@/components/layout/PageContainer";
+// import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -56,7 +57,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-neutral-950 text-neutral-50`}
       >
         {children}
-
+        {/* Load model-viewer once, globally */}
         <Analytics />
       </body>
     </html>

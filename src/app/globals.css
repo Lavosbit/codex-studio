@@ -1,3 +1,53 @@
 @import "tailwindcss";
 
 /* Optional: your own global styles can go here later */
+/* Codex hotspot base */
+.cdx-hotspot {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6); /* slate-400-ish */
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(45, 212, 191, 0.18),
+      transparent
+    ),
+    rgba(15, 23, 42, 0.92); /* dark codex pill */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  color: #e5e7eb;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: auto;
+  cursor: default;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* small emerald dot */
+.cdx-hotspot-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 2px solid #22c55e; /* emerald */
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+
+/* label text */
+.cdx-hotspot-label {
+  white-space: nowrap;
+}
+
+/* soften when not facing camera (model-viewer can toggle data-visible) */
+.cdx-hotspot[data-visible="false"],
+.cdx-hotspot:not([data-visible]) {
+  opacity: 0.3;
+}
+
+/* Hide children until web component is defined (from docs)  [oai_citation:0‡_model-viewer_ Annotations.pdf](sediment://file_000000004678722f8df26dc80dbb19ca) */
+:not(:defined) > .cdx-hotspot {
+  display: none;
+}
