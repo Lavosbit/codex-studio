@@ -1,16 +1,14 @@
-"use client";
-
 // app/demo/page.tsx
 
 import { demoArtifacts } from "@/data/demoArtifacts";
 import { ArtifactViewer } from "@/components/ArtifactViewer";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Global Demo Gallery | Codex Studio",
-  description:
-    "Explore a curated set of global artifacts rendered in Codex Studio's viewer.",
-};
+// export const metadata = {
+//   title: "Global Demo Gallery | Codex Studio",
+//   description:
+//     "Explore a curated set of global artifacts rendered in Codex Studio's viewer.",
+// };
 
 export default function DemoGalleryPage() {
   return (
