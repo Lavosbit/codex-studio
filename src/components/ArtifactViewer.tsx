@@ -1,25 +1,25 @@
-// components/ArtifactViewer.tsx
 "use client";
 
-import "@google/model-viewer"; // ensure this is imported somewhere once
-import type { DemoArtifact } from "@/data/demoArtifacts";
+import ModelViewer from "./ModelViewer";
 
-type Props = {
-  artifact: DemoArtifact;
-};
-
-export function ArtifactViewer({ artifact }: Props) {
+export function ArtifactViewer() {
   return (
     <div className="w-full aspect-[4/3] rounded-2xl border border-slate-800 bg-black/40 overflow-hidden">
-      <model-viewer
+      <ModelViewer
         src="/demo-assets/la-pieta.glb"
         alt="La Pietà sculpture"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
         camera-controls
         auto-rotate
-        shadow-intensity="0.9"
-      ></model-viewer>
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-orbit="0deg 65deg 2.3m"
+        field-of-view="30deg"
+        shadow-intensity="0.6"
+        shadow-softness="0.8"
+        exposure="0.8"
+        environment-image="neutral"
+        style={{ width: "100%", height: "100%" }}
+      />
     </div>
   );
 }
