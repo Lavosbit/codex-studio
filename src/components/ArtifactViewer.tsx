@@ -1,13 +1,18 @@
 "use client";
 
 import ModelViewer from "./ModelViewer";
+import type { DemoArtifact } from "@/data/demoArtifacts";
 
-export function ArtifactViewer() {
+type Props = {
+  artifact: DemoArtifact;
+};
+
+export function ArtifactViewer({ artifact }: Props) {
   return (
     <div className="w-full aspect-[4/3] rounded-2xl border border-slate-800 bg-black/40 overflow-hidden">
       <ModelViewer
-        src="/demo-assets/la-pieta.glb"
-        alt="La Pietà sculpture"
+        src={artifact.file} // <- uses artifact data
+        alt={artifact.name}
         camera-controls
         auto-rotate
         ar
